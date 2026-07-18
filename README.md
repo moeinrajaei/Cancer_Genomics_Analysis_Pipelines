@@ -57,7 +57,7 @@ GATK	4.4.0.0
 ANNOVAR	2019Oct24
 
 Reference Genome:
-GRCh38 / hg38
+hg38
 
 Required reference resources include:
 Human reference genome (GRCh38)

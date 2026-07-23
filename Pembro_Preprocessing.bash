@@ -1,4 +1,3 @@
-
 #!/bin/sh
 #SBATCH --job-name=Pembrolizumab_pre_processing # Job name
 #SBATCH --mail-type=ALL # Mail events (NONE, BEGIN, END, FAIL, ALL)
@@ -8,7 +7,7 @@
 #SBATCH --mem=32gb # Memory limit
 #SBATCH --partition=week
 #SBATCH --time=4-00:01:00 # Time limit hrs:min:sec
-#SBATCH --output=Pembrolizumab_pre_processing%j.out # Standard output and error log
+#SBATCH --output=Pembro_RT_pre_processing%j.out # Standard output and error log
 
 
 ### step 1: Raw quality check using fastqcmodule load FastQC/0.11.9-Java-11

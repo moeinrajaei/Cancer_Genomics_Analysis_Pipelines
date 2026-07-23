@@ -6,7 +6,7 @@
 #SBATCH --ntasks=1 # Run a single task
 #SBATCH --mem-per-cpu=8G # Memory limit
 #SBATCH --time=21:05:00 # Time limit hrs:min:sec
-#SBATCH --output=Mutect2_Tumor_with_matched_normal.out # Standard output and error log
+#SBATCH --output=Pembro_RT_Mutect2_Tumor_with_matched_normal.out # Standard output and error log
 
 
 module load GATK/4.4.0.0-GCCcore-10.2.0-Java-17
@@ -35,9 +35,7 @@ gatk Mutect2 \
     --f1r2-tar-gz 7275-3C4_143_050_S55_L001.3C4_3BL.f1r2.tar.gz \
     --tmp-dir tmp \
     -O 7275-3C4_143_050_S55_L001.3C4_3BL.vcf.gz
-	
-	
-
+		
 ### Learn Orientation Bias Artifacts: Tools involved: LearnReadOrientationModel
 for i in *.f1r2.tar.gz; do
     gatk LearnReadOrientationModel \
@@ -63,9 +61,7 @@ for i in *.getpileupsummaries.table; do
     -O "${i/%.getpileupsummaries.table/.calculatecontamination.table}"
 done
 
-
-
-# Filter Variants: Tools involved: FilterMutectCalls
+### Filter Variants: Tools involved: FilterMutectCalls
 gatk FilterMutectCalls \
     -V 7275-2C4_167_026_S19_L002.2C4_3BL.vcf.gz \
     -R Homo_sapiens_assembly38.fasta \
@@ -91,7 +87,6 @@ for i in *.filtered.vcf.gz; do
     --exclude-filtered true \
     --tmp-dir tmp
 done
-
 
 ### Annotation usinf annovar:
 module load annovar/2019Oct24-GCCcore-10.2.0-Perl-5.32.0

@@ -63,12 +63,12 @@ done
 
 ### Filter Variants: Tools involved: FilterMutectCalls
 gatk FilterMutectCalls \
-    -V 7275-2C4_167_026_S19_L002.2C4_3BL.vcf.gz \
+    -V 7275-2C4_167_026_S19_L002.2C4_2BL.vcf.gz \
     -R Homo_sapiens_assembly38.fasta \
     --tumor-segmentation 7275-2C4_167_026_S19_L002.segments.table \
     --contamination-table 7275-2C4_167_026_S19_L002.calculatecontamination.table \
-    --ob-priors 7275-2C4_167_026_S19_L002.2C4_3BL.read-orientation-model.tar.gz \
-    -O 7275-2C4_167_026_S19_L002.2C4_3BL.filtered.vcf.gz
+    --ob-priors 7275-2C4_167_026_S19_L002.2C4_2BL.read-orientation-model.tar.gz \
+    -O 7275-2C4_167_026_S19_L002.2C4_2BL.filtered.vcf.gz
 
 gatk FilterMutectCalls \
     -V 7275-3C4_143_050_S55_L001.3C4_3BL.vcf.gz \

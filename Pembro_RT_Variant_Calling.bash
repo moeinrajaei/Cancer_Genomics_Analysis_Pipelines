@@ -20,9 +20,9 @@ gatk Mutect2 \
     --germline-resource af-only-gnomad.hg38.vcf.gz \
     --intervals xgen-exome-hyb-panel-v2-targets-hg38.bed \
     --panel-of-normals gatk4_mutect2_4136_pon.vcf.gz \
-    --f1r2-tar-gz 7275-2C4_167_026_S19_L002.2C4_3BL.f1r2.tar.gz \
+    --f1r2-tar-gz 7275-2C4_167_026_S19_L002.2C4_2BL.f1r2.tar.gz \
     --tmp-dir tmp \
-    -O 7275-2C4_167_026_S19_L002.2C4_3BL.vcf.gz
+    -O 7275-2C4_167_026_S19_L002.2C4_2BL.vcf.gz
 	
 gatk Mutect2 \
     -R Homo_sapiens_assembly38.fasta \
@@ -92,7 +92,7 @@ done
 module load annovar/2019Oct24-GCCcore-10.2.0-Perl-5.32.0
 
 table_annovar.pl humandb/7275-3C4_143_050_S55_L001.3C4_3BL.final.vcf humandb/ -buildver hg38 -out 3C4 -remove -protocol refGene -operation g -nastring . -vcfinput -polish
-table_annovar.pl humandb/7275-2C4_167_026_S19_L002.2C4_3BL.final.vcf humandb/ -buildver hg38 -out output/2C4 -remove -protocol refGene -operation g -nastring . -vcfinput -polish
+table_annovar.pl humandb/7275-2C4_167_026_S19_L002.2C4_2BL.final.vcf humandb/ -buildver hg38 -out output/2C4 -remove -protocol refGene -operation g -nastring . -vcfinput -polish
 
 
 #END
